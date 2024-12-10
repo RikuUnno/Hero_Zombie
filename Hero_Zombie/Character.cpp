@@ -80,6 +80,10 @@ void Character::operator=(const Character& other)
     m_def = other.m_def;
 }
 
+char* Character::GetName() const
+{
+    return m_name;
+}
 
 int Character::GetAttack() const
 {
@@ -101,19 +105,20 @@ int Character::GetMp() const
     return m_mp;
 }
 
-//剣の攻撃
-void Character::SwordAttack(Character* character)
+//剣の攻撃 character1には相手を入れてcharacter2には自分を入れる
+void Character::SwordAttack(Character* character1, Character* character2)
 {
-    character->SwordTakeDamage(character);
+    character1->SwordTakeDamage(character2);
 
     cout << "剣で攻撃しました" << endl;
+    cout << endl;
 }
 
-//魔法攻撃
-void Character::MagicAttack(Character* character)
+//魔法攻撃 character1には相手を入れてcharacter2には自分を入れる
+void Character::MagicAttack(Character* character1, Character* character2)
 {
     if (m_mp > 10) {
-        character->MagicTakeDamage(character);
+        character1->MagicTakeDamage(character2);
         m_mp -= 10;
 
         cout << "魔法が発動しました" << endl;
@@ -122,6 +127,7 @@ void Character::MagicAttack(Character* character)
     {
         cout << "魔法が発動されませんでした" << endl;
     }
+    cout << endl;
 }
 
 //攻撃受けたとき
@@ -129,29 +135,43 @@ void Character::SwordTakeDamage(Character *character)
 {
     m_hp -= character->GetAttack() - m_def;
 
-    cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
+    if (character->GetAttack() - m_def > 0)
+    {
+        cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
+    }
+    else
+    {
+        cout << m_name << "は" << '0' << "ダメージ受けました" << endl;
+    }
 }
 
 //魔法で攻撃受けたとき
 void Character::MagicTakeDamage(Character* character)
 {
-    m_hp -= character->GetAttack() + 10 - m_def;
+    m_hp -= character->GetAttack() + 15 - m_def;
 
-    cout << m_name << "は" << character->GetAttack() + 10 - m_def << "ダメージ受けました" << endl;
+    if (character->GetAttack() - m_def > 0)
+    {
+        cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
+    }
+    else
+    {
+        cout << m_name << "は" << '0' << "ダメージ受けました" << endl;
+    }
 }
 
 //Hpの回復
 void Character::HpRecovery()
 {
     m_hp += 20;
-    cout << "HPが20回復しました" << endl;
+    cout << m_name << "のHPが20回復しました" << endl;
 }
 
 //Mpの回復
 void Character::MpRecovery()
 {
     m_mp += 5;
-    cout << "MPが5回復しました" << endl;
+    cout << m_name << "のMPが5回復しました" << endl;
 }
 
 //情報表示関数

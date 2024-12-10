@@ -17,7 +17,7 @@ void Hero::HpJudgment()
 //MP‚Ì”»’f
 void Hero::MpJudgment()
 {
-	if (m_mp > 10)
+	if (m_mp > 8)
 	{
 		MpRecovery();
 	}
@@ -26,5 +26,5 @@ void Hero::MpJudgment()
 //Hero‚Íˆêƒ^[ƒ“‚²‚Æ‚É‘Ì—Í‚ğ‚T‰ñ•œ‚·‚é
 void Hero::MpPeriodicRecovery()
 {
-	m_mp += 5;
+	m_mp += 10;
 }

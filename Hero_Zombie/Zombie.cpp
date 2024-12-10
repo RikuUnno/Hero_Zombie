@@ -27,5 +27,5 @@ void Zombie::MpJudgment()
 //Zombie‚Éˆêƒ^[ƒ“‚²‚Æ‚É‘Ì—Í‚ğ‚T‰ñ•œ‚·‚é
 void Zombie::HpPeriodicRecovery()
 {
-	m_hp += 5;
+	m_hp += 1;
 }

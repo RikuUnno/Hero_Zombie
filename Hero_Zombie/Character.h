@@ -2,7 +2,7 @@
 
 class Character
 {
-public:
+protected:
 	char* m_name;	//–¼‘O
 	int m_hp;		//‘Ì—Í
 	int m_mp;		//ƒ}ƒi
@@ -20,6 +20,8 @@ public:
 	void operator=(const Character& other);
 
 public:
+	//m_name‚ğ•Ô‚·ŠÖ”
+	char* GetName() const;
 	//m_atk‚ğ•Ô‚·ŠÖ”
 	int GetAttack() const;
 	//m_def‚ğ•Ô‚·ŠÖ”
@@ -31,9 +33,9 @@ public:
 
 public:
 	//Œ•‚ÌUŒ‚
-	void SwordAttack(Character* character);
+	void SwordAttack(Character* character1, Character* character2);
 	//–‚–@UŒ‚
-	void MagicAttack(Character* character);
+	void MagicAttack(Character* character1, Character* character2);
 	//Œ•‚ÅUŒ‚ó‚¯‚½‚Æ‚«
 	void SwordTakeDamage(Character* character);
 	//–‚–@‚ÅUŒ‚ó‚¯‚½‚Æ‚«
@@ -45,4 +47,7 @@ public:
 	//î•ñ•\¦ŠÖ”
 	void Show();
 	
+public:
+	virtual void HpJudgment() = 0;
+	virtual void MpJudgment() = 0;
 };
