@@ -105,7 +105,7 @@ int Character::GetMp() const
     return m_mp;
 }
 
-//Œ•‚ÌUŒ‚ character1‚É‚Í‘ŠŽè‚ð“ü‚ê‚Ächaracter2‚É‚ÍŽ©•ª‚ð“ü‚ê‚é
+//Œ•‚ÌUŒ‚ 
 void Character::SwordAttack(Character* character1)
 {
     character1->SwordTakeDamage(this);
@@ -114,7 +114,7 @@ void Character::SwordAttack(Character* character1)
     cout << endl;
 }
 
-//–‚–@UŒ‚ character1‚É‚Í‘ŠŽè‚ð“ü‚ê‚Ächaracter2‚É‚ÍŽ©•ª‚ð“ü‚ê‚é
+//–‚–@UŒ‚ 
 void Character::MagicAttack(Character* character1)
 {
     if (m_mp > 10) {
