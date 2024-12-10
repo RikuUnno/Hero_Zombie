@@ -16,8 +16,8 @@ int main() {
     Hero hero("Hero", 50, 20, 15, 7);
 
     Character* pChar[2];
-    pChar[0] = &zombie;
-    pChar[1] = &hero;
+    pChar[0] = &zombie; //ゾンビ
+    pChar[1] = &hero;   //ヒーロー
 
     cout << "ゲームスタート！" << endl;
 
@@ -44,7 +44,7 @@ int main() {
             pChar[1]->MagicAttack(pChar[0]);
         }
         if (pChar[0]->GetHp() <= 0) {
-            cout << pChar[1]->GetName() << "は倒れた！" << pChar[1]->GetName() << "の勝利！" << endl;
+            cout << pChar[0]->GetName() << "は倒れた！" << pChar[1]->GetName() << "の勝利！" << endl;
             break;
         }
 
