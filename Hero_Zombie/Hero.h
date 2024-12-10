@@ -5,8 +5,6 @@ class Hero:
 	public Character
 {
 public:
-
-public:
 	//コンストラクタ
 	Hero(const char* name, int hp, int mp, int atk, int def);
 

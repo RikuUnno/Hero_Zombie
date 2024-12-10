@@ -137,9 +137,7 @@ void Character::SwordTakeDamage(Character *character)
 
     if (character->GetAttack() - m_def > 0)
     {
-        cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
-
-       
+        cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;       
     }
     else
     {
@@ -156,7 +154,7 @@ void Character::MagicTakeDamage(Character* character)
 
     if (character->GetAttack() - m_def > 0)
     {
-        cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
+        cout << m_name << "は" << character->GetAttack() + 15 - m_def << "ダメージ受けました" << endl;
     }
     else
     {
