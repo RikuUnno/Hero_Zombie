@@ -80,7 +80,7 @@ void Character::operator=(const Character& other)
     m_def = other.m_def;
 }
 
-char* Character::GetName() const
+const char* Character::GetName() const
 {
     return m_name;
 }
@@ -106,19 +106,19 @@ int Character::GetMp() const
 }
 
 //Œ•‚ÌUŒ‚ character1‚É‚Í‘ŠŽè‚ð“ü‚ê‚Ächaracter2‚É‚ÍŽ©•ª‚ð“ü‚ê‚é
-void Character::SwordAttack(Character* character1, Character* character2)
+void Character::SwordAttack(Character* character1)
 {
-    character1->SwordTakeDamage(character2);
+    character1->SwordTakeDamage(this);
 
     cout << "Œ•‚ÅUŒ‚‚µ‚Ü‚µ‚½" << endl;
     cout << endl;
 }
 
 //–‚–@UŒ‚ character1‚É‚Í‘ŠŽè‚ð“ü‚ê‚Ächaracter2‚É‚ÍŽ©•ª‚ð“ü‚ê‚é
-void Character::MagicAttack(Character* character1, Character* character2)
+void Character::MagicAttack(Character* character1)
 {
     if (m_mp > 10) {
-        character1->MagicTakeDamage(character2);
+        character1->MagicTakeDamage(this);
         m_mp -= 10;
 
         cout << "–‚–@‚ª”­“®‚µ‚Ü‚µ‚½" << endl;
@@ -181,7 +181,7 @@ void Character::MpRecovery()
 }
 
 //î•ñ•\Ž¦ŠÖ”
-void Character::Show()
+void Character::Show() const
 {
     cout << "–¼‘OF" << m_name << endl
         << "HPF" << m_hp << endl

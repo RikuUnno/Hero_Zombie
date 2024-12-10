@@ -21,7 +21,7 @@ public:
 
 public:
 	//m_name‚ğ•Ô‚·ŠÖ”
-	char* GetName() const;
+	const char* GetName() const;
 	//m_atk‚ğ•Ô‚·ŠÖ”
 	int GetAttack() const;
 	//m_def‚ğ•Ô‚·ŠÖ”
@@ -33,9 +33,9 @@ public:
 
 public:
 	//Œ•‚ÌUŒ‚
-	void SwordAttack(Character* character1, Character* character2);
+	void SwordAttack(Character* character1);
 	//–‚–@UŒ‚
-	void MagicAttack(Character* character1, Character* character2);
+	void MagicAttack(Character* character1);
 	//Œ•‚ÅUŒ‚ó‚¯‚½‚Æ‚«
 	void SwordTakeDamage(Character* character);
 	//–‚–@‚ÅUŒ‚ó‚¯‚½‚Æ‚«
@@ -45,9 +45,10 @@ public:
 	//Mp‚Ì‰ñ•œ
 	void MpRecovery();
 	//î•ñ•\¦ŠÖ”
-	void Show();
+	void Show() const;
 	
 public:
+	//ƒˆ‰¼‘•ŠÖ”’Ç‰Á
 	virtual void HpJudgment() = 0;
 	virtual void MpJudgment() = 0;
 };

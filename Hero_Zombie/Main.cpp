@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 int main() {
     // ランダムシードを設定
     srand((unsigned int)time(NULL));
@@ -36,11 +37,11 @@ int main() {
         // ヒーローの行動
         if (rand() % 2 == 0) { // 50%の確率で剣攻撃
             cout << heroChar.GetName() << "の攻撃！剣で攻撃します。" << endl;
-            heroChar.SwordAttack(&zombieChar, &heroChar);
+            heroChar.SwordAttack(&zombieChar);
         }
         else { // 50%の確率で魔法攻撃
             cout << heroChar.GetName() << "の攻撃！魔法を発動します。" << endl;
-            heroChar.MagicAttack(&zombieChar, &heroChar);
+            heroChar.MagicAttack(&zombieChar);
         }
         if (zombieChar.GetHp() <= 0) {
             cout << zombieChar.GetName() << "は倒れた！" << heroChar.GetName() << "の勝利！" << endl;
@@ -50,11 +51,11 @@ int main() {
         // ゾンビの行動
         if (rand() % 2 == 0) { // 50%の確率で剣攻撃
              cout << zombieChar.GetName() << "の攻撃！剣で攻撃します。" << endl;
-            zombieChar.SwordAttack(&heroChar, &zombieChar);
+            zombieChar.SwordAttack(&heroChar);
         }
         else { // 50%の確率で魔法攻撃
             cout << zombieChar.GetName() << "の攻撃！魔法を発動します。" << endl;
-            zombieChar.MagicAttack(&heroChar, &zombieChar);
+            zombieChar.MagicAttack(&heroChar);
         }
         if (heroChar.GetHp() <= 0) {
             cout << heroChar.GetName() << "は倒れた！" << zombieChar.GetName() << "の勝利！" << endl;
