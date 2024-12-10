@@ -42,7 +42,7 @@ int main() {
             cout << heroChar.GetName() << "‚ÌUŒ‚I–‚–@‚ğ”­“®‚µ‚Ü‚·B" << endl;
             heroChar.MagicAttack(&zombieChar, &heroChar);
         }
-        if (heroChar.GetHp() <= 0) {
+        if (zombieChar.GetHp() <= 0) {
             cout << zombieChar.GetName() << "‚Í“|‚ê‚½I" << heroChar.GetName() << "‚ÌŸ—˜I" << endl;
             break;
         }
@@ -56,7 +56,7 @@ int main() {
             cout << zombieChar.GetName() << "‚ÌUŒ‚I–‚–@‚ğ”­“®‚µ‚Ü‚·B" << endl;
             zombieChar.MagicAttack(&heroChar, &zombieChar);
         }
-        if (zombieChar.GetHp() <= 0) {
+        if (heroChar.GetHp() <= 0) {
             cout << heroChar.GetName() << "‚Í“|‚ê‚½I" << zombieChar.GetName() << "‚ÌŸ—˜I" << endl;
             break;
         }

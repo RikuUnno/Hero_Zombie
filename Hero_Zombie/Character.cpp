@@ -138,11 +138,15 @@ void Character::SwordTakeDamage(Character *character)
     if (character->GetAttack() - m_def > 0)
     {
         cout << m_name << "は" << character->GetAttack() - m_def << "ダメージ受けました" << endl;
+
+       
     }
     else
     {
         cout << m_name << "は" << '0' << "ダメージ受けました" << endl;
     }
+
+    cout << m_name << "の体力は" << m_hp << endl;
 }
 
 //魔法で攻撃受けたとき
@@ -158,6 +162,8 @@ void Character::MagicTakeDamage(Character* character)
     {
         cout << m_name << "は" << '0' << "ダメージ受けました" << endl;
     }
+
+    cout << m_name << "の体力は" << m_hp << endl;
 }
 
 //Hpの回復
